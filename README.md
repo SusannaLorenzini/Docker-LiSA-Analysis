@@ -1,2 +1,2 @@
-# Docker-LiSA-WEB
-Docker files for LiSA-WEB
+# Docker-LiSA-Analysis
+Docker files for LiSA Analysis.
