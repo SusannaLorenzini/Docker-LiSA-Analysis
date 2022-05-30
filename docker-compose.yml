@@ -35,5 +35,4 @@ services:
 #Docker Networks
 networks:
   labnet: 
-    external:
-      name: labnet
+    name: lisa-analysis_network
