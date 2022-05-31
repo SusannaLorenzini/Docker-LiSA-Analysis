@@ -46,8 +46,6 @@ The main files used to build the two images are docker-compose.yml and dockerfil
 ```
 ***NB***: be sure to run this command from the folder lisa-analysis, which contains the docker-compose.yml file.
 
-You can check the presence of the two images that we just created with ***docker image ls***.
-
 ### 5. Run the docker container
 Run the two docker containers in detached mode (in background), that are based on docker images that you just built. The following command will run both according to instructions contained in docker-compose.yml.
 
@@ -56,9 +54,11 @@ Run the two docker containers in detached mode (in background), that are based o
 ```
 ***NB***: be sure to run this command from the folder lisa-analysis, which contains docker-compose.yml file.
 
-After running this command a local network will be created, it will be used by the two containers to communicate. You can check the presence of the network (called *lisa-analysis_network*) with ***docker network ls***.   
+After running this command a local network will be created, it will be used by the two containers to communicate. You can check the presence of the network (called *lisa-analysis_network*) with ***docker network ls***.    
 
 You can ensure that the two containers are running with ***docker ps***. They are called: *lisa-analysis_container* that is the container where source code of LiSA Analysis is placed and where PHP 8 and Java 11 are installed; *nginx_container* that is the container of the webserver.    
+
+You can also check the presence of the two docker images that we created with ***docker image ls***. 
 
 ### 6. Open the browser at localhost:80
 Now everything is good to go. You can open your browser at localhost:80 and you can use LiSA Analysis.  
