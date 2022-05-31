@@ -1,16 +1,17 @@
-# Docker for LiSA-Analysis
-Docker files for LiSA Analysis.  
+# Docker for LiSA Analysis 
+You can use LiSA Analysis, without having PHP 8 and Java 11 installed in your computer, by using Docker.  
 
 ## Requirements
 - Docker.
-- git.
 
 <br>
    
-## Installation
-You can use LiSA Analysis, without having PHP 8 and Java 11 installed in your computer, by using Docker.
+## Installation with git
+Follow these steps to build docker image and to start containers that will allow you to use LiSA Analysis in your local browser.
+<br><br>
+***NB***: if you don't have git installed follow steps from 1 to 3 of paragraph [*Installation without git*](#install_no_git) and then come back here to finish with steps from 4 to 6.  
 
-Follow these steps to build docker image and to start the container that will allow you to use LiSA Analysis in your local browser. Use your local shell:
+Use your local shell:
 
 
 ### 1. Clone this repository
@@ -36,6 +37,7 @@ LiSA Analysis repository contains the source code that will be run from the dock
 ```
 ***Important***: do not change the name "src", it is used by docker-compose file and by the container itself.
 
+<a name="step-4-6"></a>
 ### 4. Build the docker image
 Use *docker-compose build* to build two docker images: the first for alpine with PHP 8 and Java 11; the second for nginx web server.  
 The main files used to build the two images are docker-compose.yml and dockerfile (in config/dockerfile).
@@ -66,6 +68,31 @@ Now everything is good to go. You can open your browser at localhost:80 and you 
    
 <br>  
 
+
+## <a name="install_no_git"></a>Installation without git (steps 1-3) 
+If you don't have git installed follow the next steps 1-3 and then go back to complete with steps 4-6:
+
+### 1. Download this repository
+Enter the [home page](https://github.com/SusannaLorenzini/Docker-LiSA-Analysis) of this repository and click on the green <span style="color:green">***Code*** </span>button and select *Download ZIP* from the menu.  
+Unzip the folder and place it where you want to have your working directory. 
+
+***Rename the folder*** from *Docker-LiSA-Analysis-main* to *lisa-analysis*.
+
+### 2. Download LiSA Analysis repository 
+Enter LiSA-WEB repository's [home page](https://github.com/SusannaLorenzini/LiSA-WEB) and click on the green <span style="color:green">***Code*** </span>button and select *Download ZIP* from the menu.  
+
+Unzip the folder and ***rename it*** from *LiSA-WEB-main* to *src*.     
+***Important***: do not change the name "src", it is used by docker-compose file and by the container itself.
+
+### 3. Place src into lisa-analysis folder
+Place *src* folder into *lisa-analysis* folder.
+
+
+### Follow steps from 4 to 6
+Open your local terminal in *lisa-analysis* folder. Now you can follow [remaining steps](#step-4-6). 
+
+<br>
+
 ## Info
 
 * ***src*** is a ***shared folder*** between your computer and the container.  
@@ -80,7 +107,7 @@ This allows you to:
 ## Additional commands
 There are a few more docker commands that can be useful.
 
-### 1. Interact with the shell of LiSA Analysis container
+### Interact with the shell of LiSA Analysis container
 You can interact with the shell of the container that contains LiSA Analysis and its dependencies by writing the following command:
 
 ```
@@ -93,7 +120,7 @@ You can check PHP version by using *php -v* and Java version with *java -version
   
 When you want to exit the container and go back to your computer just type ***exit*** and hit enter. 
 
-### 2. Stop containers
+### Stop containers
 You can stop both containers with one command. Place in the folder lisa-analysis and use the following command.
 
 ```
@@ -101,7 +128,7 @@ You can stop both containers with one command. Place in the folder lisa-analysis
 ```
 If you open the browser and refresh the page you can see that LiSA Analysis is turned off. 
 
-### 3. Start containers 
+### Start containers 
 Don't worry, you can start LiSA Analysis again! Place in the folder lisa-analysis and start the two containers again as follows.
 
 ```
@@ -115,13 +142,15 @@ Now you can use LiSA Analysis again in your browser at localhost:80.
 
 ## General docker commands
 
-### 1. Images
+### Images
 As mentioned before, you can use ***docker image ls*** to see images downloaded in your local docker.
 
-### 2. Containers
+### Containers
 You can see which containers are currently running with ***docker ps***  and you can use ***docker ps -a*** to see all containers, also the stopped ones.  
 These commands will show the two containers individually.
 
-### 3. Docker-compose containers
+### Docker-compose containers
 You can also see docker-compose containers running with ***docker-compose ls*** and you can also see docker-compose containers that are stopped with ***docker-compose ls -a***.  
 This will show the two containers of LiSA Analysis grouped in one line.
+
+
